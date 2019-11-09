@@ -1,5 +1,5 @@
 let x = 0;
-let y = 3;
+let y = 0;
 let orientation = 'N'; // Default to North
 
 let mapwidth = 5;
@@ -10,6 +10,19 @@ window.onload = function(){
         document.getElementById('map').innerHTML = displayMap();
         // Run displayMap function when button is pressed
     });
+    document.getElementById('sizebutton').addEventListener('click', e =>{
+        let str = document.getElementById('mapsize').value;
+        // Get value from the text box
+        setGrid(str); //Run setGrid function and pass str 
+        document.getElementById('map').innerHTML = displayMap();
+        document.getElementById('sizediv').style.display="none"; //Hide text box
+    });
+}
+
+function setGrid(str){
+    let coords = str.split(" "); //Split input from text box
+    mapwidth = coords[0];
+    mapheight = coords[1];
 }
 
 function displayMap(){
