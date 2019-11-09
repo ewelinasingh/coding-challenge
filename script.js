@@ -21,9 +21,9 @@ window.onload = function(){
         document.getElementById('map').innerHTML = displayMap(); // Run displayMap function
     });
     document.getElementById('directionbutton').addEventListener('click', e =>{
-        let str = document.getElementById('directions').value;
-        receiveDirections(str);
-        document.getElementById('map').innerHTML = displayMap();
+        let str = document.getElementById('directions').value; // Get value from text box
+        receiveDirections(str); // Run receiveDirections functions and pass str
+        document.getElementById('map').innerHTML = displayMap(); // Run displayMap function
     });
 }
 
@@ -63,32 +63,32 @@ function displayMap(){
 }
 
 function moveShip(instruction){
-    if(instruction == 'L'){
-        if(orientation == 'N'){
-            orientation = 'W'
+    if(instruction == 'L'){ // if instruction is LEFT
+        if(orientation == 'N'){ // if ship faces north
+            orientation = 'W' // make it face west
         }
-        else if(orientation == 'E'){
-            orientation = 'N';
+        else if(orientation == 'E'){ // if ship faces east
+            orientation = 'N'; // make it face north
         }
-        else if(orientation == 'S'){
-            orientation = 'E';
+        else if(orientation == 'S'){ // if ship faces south
+            orientation = 'E'; // make it face east
         }
-        else if(orientation == 'W'){
-            orientation = 'S';
+        else if(orientation == 'W'){ // if ship faces west
+            orientation = 'S'; // make it face south
         }
     }
-    else if(instruction == 'R'){
-        if(orientation == 'N'){
-            orientation = 'E'
+    else if(instruction == 'R'){ // if instruction is RIGHT
+        if(orientation == 'N'){ // if ship faces north
+            orientation = 'E' // make it face east
         }
-        else if(orientation == 'E'){
-            orientation = 'S';
+        else if(orientation == 'E'){ // if ship faces east
+            orientation = 'S'; // make it face south
         }
-        else if(orientation == 'S'){
-            orientation = 'W';
+        else if(orientation == 'S'){ // if ship faces south
+            orientation = 'W'; // make it face west
         }
-        else if(orientation == 'W'){
-            orientation = 'N';
+        else if(orientation == 'W'){ // if ship faces west
+            orientation = 'N'; // make it face north
         }
     }
     else if(instruction == 'F'){
