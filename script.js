@@ -1,5 +1,5 @@
 let x = 0;
-let y = 0;
+let y = 3;
 let orientation = 'N'; // Default to North
 
 let mapwidth = 5;
@@ -28,4 +28,25 @@ function displayMap(){
         mapString = mapString + "</br>"; // Start grid on new line
     }
     return mapString;
+}
+
+function moveShip(instruction){
+    if(instruction == 'F'){
+        moveShipForward();
+    }
+}
+    
+function moveShipForward(){
+    if(orientation == 'N'){
+        y--;
+    }
+    else if(orientation == 'E'){
+        x++;
+    }
+    else if(orientation == 'S'){
+        y++;
+    }
+    else if(orientation == 'W'){
+        x--;
+    }
 }
