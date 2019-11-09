@@ -44,6 +44,7 @@ function receiveDirections(str){
     for(let i = 0; i < str.length; i++){
         moveShip(str[i]);
     }
+    document.getElementById('finaldiv').innerHTML = x + " " + y + " " + orientation; // Print final coordinates of ship
 }
 
 function displayMap(){
