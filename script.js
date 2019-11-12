@@ -52,10 +52,10 @@ function displayMap(){
     for(let i = 0; i < mapheight; i++){
         for(let j = 0; j < mapwidth; j++){
             if(y==i && x==j){
-                mapString += 'X'; // X represents the ship
+                mapString += '<img src="boat.png" alt="Ship" id="shipimg">'; // X represents the ship
             }
             else{
-              mapString = mapString + " . "; // . represents grid
+              mapString = mapString + " <div id='gridbox'> </div> "; // . represents grid
             }
         }
         mapString = mapString + "</br>"; // Start grid on new line
