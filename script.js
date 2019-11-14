@@ -22,9 +22,12 @@ window.onload = function(){
     });
     document.getElementById('directionbutton').addEventListener('click', e =>{
         let str = document.getElementById('directions').value; // Get value from text box
-        receiveDirections(str); // Run receiveDirections functions and pass str
+        let gridstr = document.getElementById('mapsize').value;
+        let coordstr = document.getElementById('shipcoords').value;
+        receiveDirections(str, gridstr, coordstr); // Run receiveDirections functions and pass str
         document.getElementById('map').innerHTML = displayMap(); // Run displayMap function
     });
+
 }
 
 function setGrid(str){
@@ -40,10 +43,15 @@ function setCoords(str){
     orientation = coords[2]; // orientation equals third input from text box
 }
 
-function receiveDirections(str){
+function receiveDirections(str, gridstr, coordstr){
     for(let i = 0; i < str.length; i++){
         moveShip(str[i]);
-    }
+
+        if(x >= mapwidth || x < 0 || y >= mapheight || y < 0 ){
+            document.getElementById('finaldiv').innerHTML = x + " " + y + " " + orientation + "LOST";
+            return;
+        }
+    } 
     document.getElementById('finaldiv').innerHTML = x + " " + y + " " + orientation; // Print final coordinates of ship
 }
 
