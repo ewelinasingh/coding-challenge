@@ -48,7 +48,7 @@ function receiveDirections(str, gridstr, coordstr){
         moveShip(str[i]);
 
         if(x >= mapwidth || x < 0 || y >= mapheight || y < 0 ){
-            document.getElementById('finaldiv').innerHTML = x + " " + y + " " + orientation + "LOST";
+            document.getElementById('finaldiv').innerHTML = x + " " + y + " " + orientation + " LOST";
             return;
         }
     } 
